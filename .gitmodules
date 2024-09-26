@@ -1,0 +1,3 @@
+[submodule "AHK-Library"]
+	path = AHK-Library
+	url = https://github.com/Masonjar13/AHK-Library

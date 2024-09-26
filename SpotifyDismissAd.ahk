@@ -80,7 +80,8 @@ unmutedPicHandle := LoadPicture("unmuted.png", "GDI+ W32 H32", 0)
 aboutText1 := "OS: " A_OSVersion " " (A_Is64bitOS?"64-bit":"32-bit") "`nAutoHotkey: " A_AhkVersion " " (A_PtrSize=8?"64-bit":"32-bit") "`nSpotify: "
 aboutText2 = 
 (
-`n`nMade by <a href="https://github.com/thecipherninja">thecipherninja</a>`n
+`n`nMade by <a href="https://github.com/thecipherninja">thecipherninja</a>
+Source: <a href="https://github.com/thecipherninja/spotify-dismiss-ad/tree/main">GitHub</a>`n
 Picture attributions:
 <a href="https://www.flaticon.com/free-icons/silent" title="silent icons">Silent icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/audio" title="audio icons">Audio icons created by Freepik - Flaticon</a>`n

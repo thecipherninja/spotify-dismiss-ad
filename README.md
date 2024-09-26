@@ -23,7 +23,7 @@ Main motivation was to build something useful at least for myself. This hobby pr
 
 ## Steps to Run the Application
 
-1. **Get source**
+1. **Get source (Optional)**
 
  - **From GitHub**
 
@@ -70,7 +70,10 @@ Main motivation was to build something useful at least for myself. This hobby pr
 
 3. **Run the Application**
 
-   - **From Windows Explorer**: Double-click the `.ahk` script or the compiled `.exe` file. Alternatively, right-click the file and select **Run Script**.
+   - **From Windows Explorer**:
+        Double-click the `.ahk` script or the compiled `.exe` file. Alternatively, right-click the file and select **Run Script**.
+        Get already compiled .exe files here: [32-bit](https://github.com/thecipherninja/spotify-dismiss-ad/releases/download/v1.0/SpotifyDismissAd_U32.exe) [64-bit](https://github.com/thecipherninja/spotify-dismiss-ad/releases/download/v1.0/SpotifyDismissAd_U64.exe)
+
    - **From Command Line**:
 
      **Script**

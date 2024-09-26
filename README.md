@@ -1,4 +1,7 @@
-<h1 align="center"><img src="./icon.ico" width="32" height="32" alt="icon" />Spotify Dismiss Ad</h1>
+<h1 align="center"><img src="./icon.ico" width="28" height="28" alt="icon" />Spotify Dismiss Ad</h1>
+
+[![download32](https://custom-icon-badges.demolab.com/badge/-Download%2032--bit-8DC740?style=for-the-badge&logo=download&logoColor=white)](https://github.com/thecipherninja/spotify-dismiss-ad/releases/download/v1.0/SpotifyDismissAd_U32.exe)
+[![download64](https://custom-icon-badges.demolab.com/badge/-Download%2064--bit-8DC740?style=for-the-badge&logo=download&logoColor=white)](https://github.com/thecipherninja/spotify-dismiss-ad/releases/download/v1.0/SpotifyDismissAd_U64.exe)
 
 ## Description
 A simple desktop application that mutes or skips Spotify advertisements (by relaunching) while music is playing.<br/>
@@ -69,6 +72,7 @@ Main motivation was to build something useful at least for myself. This hobby pr
 
    - **From Windows Explorer**: Double-click the `.ahk` script or the compiled `.exe` file. Alternatively, right-click the file and select **Run Script**.
    - **From Command Line**:
+
      **Script**
 
         *32-bit*

@@ -1,4 +1,4 @@
-<h1 align="center"><img src="./icon.ico" width="90" height="53" alt="icon" />Spotify Dismiss Ad</h1>
+<h1 align="center"><img src="./icon.ico" width="32" height="32" alt="icon" />Spotify Dismiss Ad</h1>
 
 ## Description
 A simple desktop application that mutes or skips Spotify advertisements (by relaunching) while music is playing.
@@ -12,14 +12,37 @@ Main motivation was to build a something useful at least for myself. This hobby 
 - **Windows 10** (32/64-bit)
 - **AutoHotkey v1.1.37.02+** (32/64-bit): [Download here](https://www.autohotkey.com/docs/v1/Tutorial.htm#s11)
   - Alternatively, use the included zip archive or download it from [AutoHotkey Releases](https://github.com/AutoHotkey/AutoHotkey/releases/tag/v1.1.37.02).
+- **Git** (optional)
 
 > [!NOTE]
 > May work on other Spotify, Windows, or AutoHotkey versions upon testing.
 
 ## Steps to Run the Application
 
-1. **Extract files from zip (Optional)**
- - Verify zip file integrity
+1. **Get source**
+
+ - **From GitHub**
+
+    ```bat
+    git clone --recurse-submodules https://github.com/thecipherninja/spotify-dismiss-ad.git
+    ```
+
+ - **From zip archive**
+
+    [Download](https://github.com/thecipherninja/spotify-dismiss-ad/archive/refs/heads/main.zip)
+
+    *Command Prompt*:
+    ```bat
+    tar -xf spotify-dismiss-ad-main.zip
+    ```
+    *PowerShell*:
+    ```bat
+    Expand-Archive -Path .\spotify-dismiss-ad-main.zip -DestinationPath .\ -Force
+    ```
+
+2. **Extract AHK files from zip (Optional)**
+
+ - **Verify zip file integrity**
 
    *Command Prompt*:
    ```bat
@@ -30,7 +53,7 @@ Main motivation was to build a something useful at least for myself. This hobby 
    (Get-FileHash .\AutoHotkey_1.1.37.02.zip -Algorithm SHA256).Hash -eq "6F3663F7CDD25063C8C8728F5D9B07813CED8780522FD1F124BA539E2854215F"
    ```
 
- - Extract files
+ - **Extract files**
 
    *Command Prompt*:
    ```bat
@@ -41,7 +64,7 @@ Main motivation was to build a something useful at least for myself. This hobby 
    Expand-Archive -Path .\AutoHotkey_1.1.37.02.zip -Force
    ```
 
-2. **Run the Application**
+3. **Run the Application**
 
    - **From Windows Explorer**: Double-click the `.ahk` script or the compiled `.exe` file. Alternatively, right-click the file and select **Run Script**.
    - **From Command Line**:

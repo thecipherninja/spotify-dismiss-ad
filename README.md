@@ -1,8 +1,9 @@
 <h1 align="center"><img src="./icon.ico" width="32" height="32" alt="icon" />Spotify Dismiss Ad</h1>
 
 ## Description
-A simple desktop application that mutes or skips Spotify advertisements (by relaunching) while music is playing.
-Main motivation was to build a something useful at least for myself. This hobby project introduced me to Windows APIs and desktop app automation and development using AutoHotkey.
+A simple desktop application that mutes or skips Spotify advertisements (by relaunching) while music is playing.<br/>
+
+Main motivation was to build something useful at least for myself. This hobby project introduced me to Windows APIs and desktop app automation and development using AutoHotkey.
 
 > [!WARNING] 
 > This is a non-serious project created for personal use and educational purposes. Use it at your own risk!

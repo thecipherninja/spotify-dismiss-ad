@@ -1,4 +1,4 @@
-# Spotify Dismiss Ad
+# [](./icon.ico) Spotify Dismiss Ad
 
 ## Description
 A simple desktop application that mutes or skips Spotify advertisements (by relaunching) while music is playing.
@@ -20,6 +20,7 @@ Main motivation was to build a something useful at least for myself. This hobby 
 
 1. **Extract files from zip (Optional)**
  - Verify zip file integrity
+
    *Command Prompt*:
    ```bat
    certutil -hashfile AutoHotkey_1.1.37.02.zip SHA256 | findstr /i "6F3663F7CDD25063C8C8728F5D9B07813CED8780522FD1F124BA539E2854215F" >nul && echo True || echo False
@@ -30,6 +31,7 @@ Main motivation was to build a something useful at least for myself. This hobby 
    ```
 
  - Extract files
+
    *Command Prompt*:
    ```bat
    mkdir AutoHotkey_1.1.37.02 && tar -xf AutoHotkey_1.1.37.02.zip -C AutoHotkey_1.1.37.02
@@ -44,6 +46,7 @@ Main motivation was to build a something useful at least for myself. This hobby 
    - **From Windows Explorer**: Double-click the `.ahk` script or the compiled `.exe` file. Alternatively, right-click the file and select **Run Script**.
    - **From Command Line**:
      **Script**
+
         *32-bit*
        ```bat
        .\AutoHotkey_1.1.37.02\AutoHotkeyU32.exe .\SpotifyDismissAd.ahk
@@ -54,6 +57,7 @@ Main motivation was to build a something useful at least for myself. This hobby 
        ```
 
      **Compiled Executable**
+
         *32-bit*
        ```bat
        .\Bin\SpotifyDismissAd_U32.exe
@@ -77,10 +81,6 @@ For more details, refer to the [AutoHotkey documentation](https://www.autohotkey
   ```
 
 Compiled executables will be located in the `.\Bin` directory.
-
-## Notes
-- Ensure you have the appropriate Spotify version installed.
-- Use the appropriate version of AutoHotkey for your system (32/64-bit).
 
 ## License
 [MIT License](./LICENSE)

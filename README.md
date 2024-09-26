@@ -1,4 +1,4 @@
-# [](./icon.ico) Spotify Dismiss Ad
+<h1 align="center"><img src="./icon.ico" width="90" height="53" alt="icon" />Spotify Dismiss Ad</h1>
 
 ## Description
 A simple desktop application that mutes or skips Spotify advertisements (by relaunching) while music is playing.

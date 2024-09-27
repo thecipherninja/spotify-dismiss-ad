@@ -238,6 +238,7 @@ getAppInfo() {
         WinGet, spotifyWinState, MinMax, ahk_id %spotifyWinID%
         WinGet, appID, ID, ahk_pid %appPID% ahk_class AutoHotkeyGUI
         getSpotifyWinTitle()
+        updateAppStartButton()
     } Catch, e {
         showErrorDialog("Error getting Spotify process info", e)
     }
@@ -357,12 +358,8 @@ guiSize(ByRef GuiHwnd, ByRef EventInfo) {
 ; update all gui components
 updateGui() {
     getAppInfo()
-    checkTitleWorking()
     updateNowPlayingText()
-    getSpotifyAd()
     dismissSpotifyAd()
-    updateAppStartButton()
-    updateMuteButton()
     Return
 }
 
@@ -371,7 +368,6 @@ updateAppStartButton() {
     buttonStatus := spotifyWinPID ? "Disable" : "Enable"
     Try {
         GuiControlGet, var, Enabled, launchSpotifyBtnControlID
-        ; If (buttonStatus != ((var) ? "Enable" : "Disable"))
         If ((spotifyWinPID) != (!var))
             GuiControl, %buttonStatus%, launchSpotifyBtnControlID
     } Catch, e {
@@ -382,6 +378,7 @@ updateAppStartButton() {
 
 ; update now playing text
 updateNowPlayingText() {
+    checkTitleWorking()
     Try {
         GuiControl, Text, nowPlayingControlID, % getNowPlayingText()
     } Catch, e {
@@ -396,9 +393,7 @@ updateMuteButton() {
         pic = HBITMAP:*%unmutedPicHandle%
         If (isMute)
             pic = HBITMAP:*%mutedPicHandle%
-        GuiControlGet, currPic,, muteBtnControlID
-        If (pic != currPic)
-            GuiControl,, muteBtnControlID, %pic%
+        GuiControl,, muteBtnControlID, %pic%
     } Catch, e {
         showErrorDialog("Error updating mute button picture", e)
     }
@@ -458,6 +453,7 @@ saveSettings() {
 
 ; mute/skip Spotify ad
 dismissSpotifyAd() {
+    getSpotifyAd()
     performLongTask("saveSettings")
     If (radioAAAControlID && !(isManualMute)) {
         ; if ad is playing AND NOT on mute, then mute
@@ -595,6 +591,7 @@ setMute(ByRef mode) {
         VA_ISimpleAudioVolume_GetMute(volume, Mute)
         ObjRelease(volume)
         isMute := Mute
+        updateMuteButton()
     } Catch, e {
         showErrorDialog("Error muting/unmuting", e)
     }

@@ -4,7 +4,7 @@
 [![download64](https://custom-icon-badges.demolab.com/badge/-Download%2064--bit-8DC740?style=for-the-badge&logo=download&logoColor=white)](https://github.com/thecipherninja/spotify-dismiss-ad/releases/download/v1.0/SpotifyDismissAd_U64.exe)
 
 ## Description
-A simple desktop application that mutes or skips Spotify advertisements (by relaunching) while music is playing.<br/>
+A simple desktop application that mutes or skips (by relaunching Spotify) Spotify advertisements while music is playing.<br/>
 
 Main motivation was to build something useful at least for myself. This hobby project introduced me to Windows APIs and desktop app automation and development using AutoHotkey.
 
@@ -14,9 +14,9 @@ Main motivation was to build something useful at least for myself. This hobby pr
 ## Dependencies
 - **Spotify** (latest version, 32/64-bit): [Download here](https://www.spotify.com/de-en/download/windows/)
 - **Windows 10** (32/64-bit)
-- **AutoHotkey v1.1.37.02+** (32/64-bit): [Download here](https://www.autohotkey.com/docs/v1/Tutorial.htm#s11)
+- **AutoHotkey v1.1.37.02 (optional)** (32/64-bit): [Download here](https://www.autohotkey.com/docs/v1/Tutorial.htm#s11)
   - Alternatively, use the included zip archive or download it from [AutoHotkey Releases](https://github.com/AutoHotkey/AutoHotkey/releases/tag/v1.1.37.02).
-- **Git** (optional)
+- **Git (optional)** [Download here](https://git-scm.com/downloads/win)
 
 > [!NOTE]
 > May work on other Spotify, Windows, or AutoHotkey versions upon testing.
@@ -70,9 +70,12 @@ Main motivation was to build something useful at least for myself. This hobby pr
 
 3. **Run the Application**
 
+> [!NOTE]
+> You don't need to have AutoHotkey installed to run compiled executables.
+
    - **From Windows Explorer**:
         Double-click the `.ahk` script or the compiled `.exe` file. Alternatively, right-click the file and select **Run Script**.
-        Get already compiled .exe files here: [32-bit](https://github.com/thecipherninja/spotify-dismiss-ad/releases/download/v1.0/SpotifyDismissAd_U32.exe) [64-bit](https://github.com/thecipherninja/spotify-dismiss-ad/releases/download/v1.0/SpotifyDismissAd_U64.exe)
+        Get already compiled .exe files here: [32-bit](https://github.com/thecipherninja/spotify-dismiss-ad/releases/download/v1.0/SpotifyDismissAd_U32.exe) / [64-bit](https://github.com/thecipherninja/spotify-dismiss-ad/releases/download/v1.0/SpotifyDismissAd_U64.exe)
 
    - **From Command Line**:
 

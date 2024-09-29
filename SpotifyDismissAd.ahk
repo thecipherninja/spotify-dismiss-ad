@@ -38,7 +38,6 @@ FileInstall, unmuted.png, unmuted.png, 0
 ; variable initializations
 global debug
 global appPID
-global appID
 global cpuMaxUsgCount
 global memMaxUsgCount
 
@@ -72,7 +71,7 @@ global radioAAAControlID
 global radioAABControlID
 global checkBAControlID
 
-debug := 1
+debug := 0
 programName := "Spotify.exe"
 appName := "Spotify Dismiss Ad"
 mutedPicHandle := LoadPicture("muted.png", "GDI+ W32 H32", 0)
@@ -118,6 +117,16 @@ SetTimer, checkPerf, 5000, 1
 ^+x::guiClose()
 
 ; function definitions
+
+; initialize default variables
+setDefaults() {
+    spotifyWinPID := ""
+    spotifyWinID := ""
+    currSpotifyWinTitle := ""
+    spotifyWinState := ""
+    isAdBreak := ""
+    isMusicPaused := ""
+}
 
 ; check whether Spotify is installed
 getSpotifyInstall() {
@@ -212,10 +221,7 @@ relaunchSpotify(ByRef killLast := true) {
             Process, Close, %programName%
             Process, Exist, %programName%
         } Until (!(ErrorLevel) || !(getAppInfo()))
-        spotifyWinPID := ""
-        spotifyWinID := ""
-        currSpotifyWinTitle := ""
-        spotifyWinState := ""
+        setDefaults()
         isAdBreak := 0
     }
     launchSpotify(killLast, lastWinState, lastPlayState)
@@ -227,16 +233,12 @@ getAppInfo() {
     Try {
         Process, Exist, %programName%
         If !(ErrorLevel) {
-            spotifyWinPID := ""
-            spotifyWinID := ""
-            currSpotifyWinTitle := ""
-            spotifyWinState := ""
+            setDefaults()
             Return false
         }
         spotifyWinPID := ErrorLevel
         WinGet, spotifyWinID, ID, ahk_exe %programName% ahk_PID %spotifyWinPID% ahk_class Chrome_WidgetWin_1
         WinGet, spotifyWinState, MinMax, ahk_id %spotifyWinID%
-        WinGet, appID, ID, ahk_pid %appPID% ahk_class AutoHotkeyGUI
         getSpotifyWinTitle()
         updateAppStartButton()
     } Catch, e {
@@ -253,10 +255,20 @@ getSpotifyWinTitle() {
 
 ; check whether Ad is playing
 getSpotifyAd() {
-    If currSpotifyWinTitle contains Advertisement,Spotify - Advertisement
-        isAdBreak := true
+    If currSpotifyWinTitle contains -
+    {
+        If currSpotifyWinTitle contains Advertisement,Spotify - Advertisement
+            isAdBreak := 1
+        Else
+            isAdBreak := 0
+    }
+    ; some ads do not have Advertisment word on window title
     Else
-        isAdBreak := false
+    {
+        ; if music paused, window title will be "Spotify Free"
+        If (!isMusicPaused)
+            isAdBreak := 1
+    }
     Return isAdBreak
 }
 
@@ -733,6 +745,7 @@ onExitCallback() {
     Try {
         getAppInfo()
         Gui errorDialog:Destroy
+        WinGet, appID, ID, ahk_pid %appPID% ahk_class AutoHotkeyGUI
         If (appID) {
             createAppStartupShortcut()
             Gui %guiHwnd%:Destroy
